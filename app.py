@@ -17,8 +17,14 @@ from werkzeug.utils import secure_filename
 import pandas as pd
 from pdf2image import convert_from_path
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR"
 from PIL import Image
+
+# Point to installed Tesseract
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+# Optional: set Poppler path (adjust this if you extracted Poppler somewhere else)
+POPPLER_PATH = r"C:\poppler\bin"
+
 
 # Folder configuration
 UPLOAD_FOLDER = 'uploads'
