@@ -37,3 +37,15 @@ This web application converts multi-page bank statement PDFs into structured Exc
 - Ensure Tesseract is correctly installed and available in your system PATH. Adjust `pytesseract.pytesseract.tesseract_cmd` in `app.py` if necessary.
 - For larger PDFs (up to ~50 pages), processing time may vary depending on your hardware.
 
+
+## Testing
+
+Unit tests build a tiny PDF from a base64 string to avoid storing binary fixtures in the repository. To update the embedded fixture, encode a PDF file and replace the value in `tests/test_process_pdf.py`:
+
+```bash
+python - <<'PY'
+import base64, pathlib
+pdf_bytes = pathlib.Path('sample.pdf').read_bytes()
+print(base64.b64encode(pdf_bytes).decode())
+PY
+```
