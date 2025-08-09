@@ -127,3 +127,15 @@ This project is open source and available under the MIT License.
 
 Contributions are welcome! Please feel free to submit issues and pull requests.
 
+
+## Testing
+
+Unit tests build a tiny PDF from a base64 string to avoid storing binary fixtures in the repository. To update the embedded fixture, encode a PDF file and replace the value in `tests/test_process_pdf.py`:
+
+```bash
+python - <<'PY'
+import base64, pathlib
+pdf_bytes = pathlib.Path('sample.pdf').read_bytes()
+print(base64.b64encode(pdf_bytes).decode())
+PY
+```
