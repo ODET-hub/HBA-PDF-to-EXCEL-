@@ -1,0 +1,6 @@
+Conclusion
+
+This sample document demonstrates the capability of the PDF to Excel converter to handle various
+content types including tables, lists, headers, and paragraphs. The converter should be able to
+intelligently detect and organize this content into separate Excel sheets for better analysis and
+reporting.

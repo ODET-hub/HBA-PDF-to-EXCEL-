@@ -5,3 +5,8 @@ pandas
 openpyxl
 Pillow
 PyMuPDF
+numpy
+reportlab
+requests
+tabula-py
+camelot-py
